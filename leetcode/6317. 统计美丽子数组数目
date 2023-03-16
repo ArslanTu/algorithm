@@ -1,0 +1,24 @@
+from collections import Counter
+from typing import List
+
+
+class Solution:
+    def beautifulSubarrays(self, nums: List[int]) -> int:
+        p_xor = []
+        cur = 0
+        for num in nums:
+            cur ^= num
+            p_xor.append(cur)
+        cnt = Counter()
+        cnt[0] = 1
+        ans = 0
+        for num in p_xor:
+            ans += cnt[num]
+            cnt[num] += 1
+        return ans
+
+sl = Solution()
+# p1 = [4,3,1,2,4]
+p1 = [4, 4, 4]
+
+print(sl.beautifulSubarrays(p1))
