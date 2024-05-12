@@ -1,5 +1,5 @@
 """
-weekply contest p1
+weekply contest p2
 """
 from typing import *
 
